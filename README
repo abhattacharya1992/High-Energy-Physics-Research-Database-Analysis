@@ -114,6 +114,16 @@ jupyter notebook HEP_Research_Database_Analysis.ipynb
 ├─ requirements.txt
 └─ README.md
 ```
+> **Note:**  
+> The full Jupyter notebook (`HEP_Research_Database_Analysis.ipynb`) may not render directly on GitHub due to widget metadata.  
+> For convenience, a plain `.py` version (`HEP_Research_Database_Analysis.py`) is included, which opens cleanly in any editor or can be re-executed with Jupyter.  
+>  
+> You can also open the notebook locally with:
+> ```bash
+> jupyter notebook HEP_Research_Database_Analysis.ipynb
+> ```
+> or view the code directly on GitHub via the `.py` file.
+
 
 ## Model Download
 
