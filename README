@@ -103,8 +103,6 @@ jupyter notebook HEP_Research_Database_Analysis.ipynb
 │  ├─ corpus_with_final_topics.csv
 │  ├─ df_src_cleaned.csv
 |  └─ hep_all_combined.csv
-├─ models/
-│  └─ bertopic_final_model/
 ├─ figs/
 │  ├─ topic_evolution.png
 │  ├─ arima_forecast.png
@@ -113,6 +111,14 @@ jupyter notebook HEP_Research_Database_Analysis.ipynb
 ├─ requirements.txt
 └─ README.md
 ```
+
+## Model Download
+
+The trained **BERTopic model** (`bertopic_final_model.tar.xz`, ~120 MB) is hosted under the [**v1.0.0 Release**](../../releases/tag/v1.0.0).  
+Download it from the release page and extract it inside the `data/` directory:
+
+```bash
+tar -xJf bertopic_final_model.tar.xz -C data/
 
 ---
 
