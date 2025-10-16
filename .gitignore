@@ -9,3 +9,4 @@ data/bertopic_final_model*
 .ipynb_checkpoints/
 __pycache__/
 *.log
+data/bertopic_final_model*
