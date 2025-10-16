@@ -1,0 +1,163 @@
+# HEP Research Database Analysis
+
+### *Topic Evolution in High-Energy Physics using BERTopic, ARIMA, and XGBoost*
+
+---
+
+## Overview
+
+This project builds an end-to-end **Natural Language Processing (NLP)** pipeline to study how research topics in **High-Energy Physics (HEP)** have evolved over the past nine decades.
+
+Starting from PDF files and citation links, the workflow:
+
+1. Constructs a structured, citation-aware corpus using **arXiv**, **CrossRef**, **INSPIRE-HEP**, and **Semantic Scholar** APIs.
+2. Applies **BERTopic** to uncover latent research themes.
+3. Analyzes topic trends over time using **normalized yearly shares**, **STL decomposition**, and **ARIMA forecasting**.
+4. Uses **XGBoost** for supervised explainability to identify domain-specific language signals.
+
+The study highlights the long-term dominance of collider and Higgs physics and the gradual stabilisation of publication output in recent years.
+
+---
+
+## Objectives
+
+* Map topic evolution and lifecycles across decades.
+* Quantify emerging, stable, and declining research themes.
+* Forecast short-term topic trajectories using ARIMA.
+* Provide interpretable insights via feature importances from XGBoost.
+* Build a reusable, extensible NLP pipeline for scientific literature.
+
+---
+
+## Pipeline
+
+```
+PDF Parsing → DOI/arXiv Extraction → Citation Expansion
+       ↓
+CrossRef / INSPIRE / Semantic Scholar APIs
+       ↓
+Corpus Cleaning & Normalisation
+       ↓
+BERTopic Modelling → Topic Trends → ARIMA Forecasting
+       ↓
+XGBoost Explainability
+```
+
+---
+
+## Key Findings
+
+* **QCD–LHC–Higgs** topics remain dominant and most stable.
+* **Collider setup** and **MSSM-related** theory papers show a gradual decline after 2015.
+* **Computational QCD** work remains steady, reflecting mature toolchains.
+* ARIMA backtest yields **MAPE ≈ 0.17**, confirming reliable short-horizon forecasts.
+
+---
+
+## Technologies Used
+
+* **Python 3.10+**
+* **BERTopic**, **sentence-transformers**, **UMAP**, **HDBSCAN**
+* **statsmodels** (ARIMA), **pandas**, **numpy**
+* **XGBoost**, **SHAP**
+* **matplotlib**, **seaborn**
+* **requests**, **feedparser**, **pymupdf**, **tqdm**
+
+---
+
+## Requirements
+
+```
+bertopic==0.16.3
+sentence-transformers==3.0.1
+umap-learn==0.5.6
+hdbscan==0.8.38
+statsmodels==0.14.2
+xgboost==2.1.1
+shap==0.45.1
+scikit-learn==1.5.2
+pandas==2.2.2
+numpy==1.26.4
+matplotlib==3.9.2
+seaborn==0.13.2
+pymupdf==1.24.10
+requests==2.32.3
+tqdm==4.66.5
+```
+---
+
+## Usage
+
+```bash
+jupyter notebook HEP_Research_Database_Analysis.ipynb
+```
+
+## Repository Structure
+
+```
+.
+├─ HEP_Research_Database_Analysis.ipynb
+├─ data/
+│  ├─ citations_corpus_all.csv
+│  ├─ corpus_patch.csv
+│  ├─ corpus_with_final_topics.csv
+│  ├─ df_src_cleaned.csv
+|  └─ hep_all_combined.csv
+├─ models/
+│  └─ bertopic_final_model/
+├─ figs/
+│  ├─ topic_evolution.png
+│  ├─ arima_forecast.png
+│  ├─ ...
+│  └─ xgboost_importance.png
+├─ requirements.txt
+└─ README.md
+```
+
+---
+
+## Results Summary
+
+* **Average ARIMA backtest MAPE:** 0.17
+* **Average RMSE:** 0.03
+* **Dominant topic:** QCD–LHC–Higgs–Quark
+* **Forecast outlook:** Steady post-2025 phase with minor decline across major topics
+* **Explainability:** Physics keywords (quark, collider, Higgs) are most influential in XGBoost
+
+---
+
+## Limitations
+
+* Default BERTopic and ARIMA parameters were used for interpretability rather than optimisation.
+* Corpus primarily based on arXiv and INSPIRE data; coverage may exclude some non-English or pre-digitisation records.
+* Forecasting limited to linear, short-horizon trends (< 5 years).
+
+---
+
+## Future Work
+
+* Build a **dedicated ML-HEP corpus** (machine learning–related HEP publications).
+* Compare topic overlaps between classical and ML-driven physics.
+* Evaluate topic coherence/diversity metrics for model benchmarking.
+* Extend forecasting with nonlinear models (Prophet, LSTM).
+
+---
+
+## Author
+
+**Dr. Arunima Bhattacharya**
+Affiliation: Instituto de Física Corpuscular, University of Valencia
+Email: arunimab@ific.uv.es
+GitHub: https://github.com/abhattacharya1992
+LinkedIn: https://www.linkedin.com/in/arunima-bhattacharya-researcher-phd/
+
+---
+
+## License
+
+Released under the **MIT License**.
+You are free to use, modify, and distribute with proper attribution.
+
+---
+
+This plain-text Markdown file will render cleanly on GitHub and clearly present your project’s goals, methods, results, and reproducibility details.
