@@ -97,6 +97,9 @@ jupyter notebook HEP_Research_Database_Analysis.ipynb
 ```
 .
 ├─ HEP_Research_Database_Analysis.ipynb
+├─ notebooks/
+│  ├─ HEP_Research_Database_Analysis.ipynb
+│  ├─ hep_research_database_analysis.py
 ├─ data/
 │  ├─ citations_corpus_all.csv
 │  ├─ corpus_patch.csv
